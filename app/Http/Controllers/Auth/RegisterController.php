@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 
 class RegisterController extends Controller
 {
@@ -15,15 +16,20 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
-        try {
-            $user = User::create([
-                'login' => $request->login,
-                'password' => $request->password,
-                'name' => $request->name,
-                'surname' => $request->surname
-            ]);
-        } catch (\Exception $e) {
-            dd($e);
-        }
+        $request->validate([
+            'name' => 'required|string|unique:users',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|confirmed|min:8'
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+        Auth::login($user);
+
+        return redirect(RouteServiceProvider::HOME);
     }
 }
