@@ -1,10 +1,8 @@
-@extends('layout.app')
-
-@section('title')
+<?php $__env->startSection('title'); ?>
     Статьи
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="post__list">
         <div class="flex">
             <h1 class="post__tittle">Новые статьи</h1>
@@ -40,4 +38,5 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\OSPanel\domains\FQW\resources\views/news.blade.php ENDPATH**/ ?>

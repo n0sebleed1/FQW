@@ -1,3 +1,1 @@
-<script>
-  window.location.href = "login";
-</script>
+<script>window.location.href = "login"</script>

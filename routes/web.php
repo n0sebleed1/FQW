@@ -2,16 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\RegisterController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/login', function () {
     return view('authorization');
-});
-
-Route::get('/registration', function () {
-    return view('registration');
 });
 
 Route::get('/news', function () {
@@ -21,3 +19,6 @@ Route::get('/news', function () {
 Route::get('/create', function () {
     return view('create');
 });
+
+Route::get('/registration', [RegisterController::class, 'create'])->name('register');
+Route::post('/registration', [RegisterController::class, 'store']);
