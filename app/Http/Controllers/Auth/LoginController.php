@@ -14,7 +14,6 @@ class LoginController extends Controller
 
     public function store(Request $request){
 
-
         $credentials = $request->validate([
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string']
@@ -22,12 +21,10 @@ class LoginController extends Controller
 
         if (! Auth::attempt($credentials)) {
             return back()
-                ->withInput()
-                ->withErrors([
-                    'email' => 'Неверный логин или пароль!'
-                ]);
+            ->withInput()
+            ->withErrors([
+                'email' => 'Неверный логин или пароль!'
+            ]);
         }
-
-        return redirect()->route('news');
     }
 }

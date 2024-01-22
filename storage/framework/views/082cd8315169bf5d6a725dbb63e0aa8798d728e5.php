@@ -11,9 +11,9 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </ul>
         <h1 class="registration__title">Авторизация</h1>
-        <input name="email" id="email" class="<?php echo e($errors->has('email') ? 'error__input' : 'registration__input'); ?>" autofocus type="text" placeholder="Email">
-        <input name="password" id="password" class="<?php echo e($errors->has('password') ? 'error__input' : 'registration__input'); ?>" type="password" placeholder="Пароль">
-        <button class="registration__submit">Вход</button>
+        <input type="email" id="email" name="email" class="<?php echo e($errors->has('email') ? 'error__input' : 'registration__input'); ?>" autofocus placeholder="Email">
+        <input type="password" id="password" name="password" class="<?php echo e($errors->has('password') ? 'error__input' : 'registration__input'); ?>" placeholder="Пароль">
+        <button type="submit" class="registration__submit">Вход</button>
         <a class="registration__link" href="registration">У меня нет аккаунта</a>
     </form>
 <?php $__env->stopSection(); ?>
