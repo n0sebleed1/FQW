@@ -18,6 +18,6 @@
             <p class="article__attach-text">Добавить вложение</p>
         </button>
         <button type="button" class="article__button">Опубликовать</button>
-        <button type="button" class="article__button">Назад</button>
+        <a href="news" class="article__button">Назад</a>
     </form>
 @endsection

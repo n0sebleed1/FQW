@@ -8,7 +8,7 @@
     <div class="post__list">
         <div class="flex">
             <h1 class="post__tittle">Новые статьи</h1>
-            <button class="post__create">Создать тему</button>
+            <a href="create" class="post__create">Создать тему</a>
         </div>
         <input class="post__search" placeholder="Поиск...">
         <div class="post">

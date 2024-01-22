@@ -26,5 +26,12 @@ class LoginController extends Controller
                 'email' => 'Неверный логин или пароль!'
             ]);
         }
+
+        return redirect('news');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('login');
     }
 }

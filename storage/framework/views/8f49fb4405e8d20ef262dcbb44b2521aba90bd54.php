@@ -16,7 +16,7 @@
             <p class="article__attach-text">Добавить вложение</p>
         </button>
         <button type="button" class="article__button">Опубликовать</button>
-        <button type="button" class="article__button">Назад</button>
+        <a href="news" class="article__button">Назад</a>
     </form>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\OSPanel\domains\FQW\resources\views/create.blade.php ENDPATH**/ ?>
