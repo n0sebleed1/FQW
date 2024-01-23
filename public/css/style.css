@@ -20,10 +20,6 @@ header {
     background-color: #282828;
 }
 
-.hiden {
-    display: none;
-}
-
 .flex {
     display: flex;
 }
@@ -313,11 +309,19 @@ header {
 .article__button {
     padding: 5px 10px;
     background-color: #FFFFFF;
-    border: 1px solid transparent;
+    border: 1px solid #909090;
     color: #000000;
     font-size: 16px;
     margin: 20px 10px 0 0;
     float: right;
+    transition: 0.3s;
+}
+
+.article__button:hover {
+    background-color: #323232;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .article__attach-window {
@@ -330,7 +334,7 @@ header {
 .article__attach-list {
     background-color: #222222;
     border: 1px solid #909090;
-    max-width: 367px;
+    max-width: 435px;
     padding: 50px;
     margin: 20% auto;
 }
@@ -338,7 +342,17 @@ header {
 .article__attach-button {
     border: none;
     background-color: transparent;
-    margin: 0 50px 0 0;
+    margin: 0 25px;
+    width: 165px;
+    height: 150px;
+    transition: 0.3s;
+}
+
+.article__attach-button:hover {
+    background-color: #323232;
+    border: 1px solid #FFFFFF;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .article__attach-name {
@@ -371,7 +385,12 @@ header {
 
 .error__input::placeholder {
     color: #FF3737;
-  }
+}
+
+.hiden {
+    display: none;
+}
+
 
 @media (max-width: 1024px){
 
@@ -465,9 +484,14 @@ header {
 
     .article {
         width: 435px;
+        margin-bottom: 150px;
     }
 
     .article__textarea {
         height: 300px;
+    }
+
+    .article__attach-button {
+        margin: 0 10px;
     }
 }

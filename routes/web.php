@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
+public function get_stats() {
+    $user = Auth::user();
+    $name = $user->name;
+}
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -14,7 +19,8 @@ Route::get('/login', function () {
 })->middleware('guest')->name('login');
 
 Route::get('/news', function () {
-    return view('news');
+    get_stats();
+    return view('news', ['name' => $name]);
 })->middleware('auth')->name('news');
 
 Route::get('/create', function () {

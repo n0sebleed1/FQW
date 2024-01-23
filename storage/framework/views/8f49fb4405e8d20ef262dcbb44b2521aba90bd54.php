@@ -7,6 +7,8 @@
         <h1 class="article__title">Новая статья</h1>
         <input class="article__input" type="text" placeholder="Название статьи...">
         <textarea class="article__input article__textarea" type="text" placeholder="Текст статьи..."></textarea>
+        <textarea class="article__input article__textarea hiden" id="js__attach-code-input" type="text" placeholder="Введите код..."></textarea>
+        <input class="article__input hiden" id="js__attach-image-input" type="file" accept="image/*">
         <button type="button" class="article__attach" id="js__attach-button">
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="30.000000px" height="30.000000px" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill="#909090" stroke="none">
@@ -15,7 +17,7 @@
             </svg>
             <p class="article__attach-text">Добавить вложение</p>
         </button>
-        <button type="button" class="article__button">Опубликовать</button>
+        <button type="submit" class="article__button">Опубликовать</button>
         <a href="news" class="article__button">Назад</a>
     </form>
 <?php $__env->stopSection(); ?>
