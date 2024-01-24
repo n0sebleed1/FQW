@@ -30,13 +30,6 @@ class LoginController extends Controller
         return redirect('news');
     }
 
-    public function news(){
-        $user = Auth::user();
-        $name = $user->name;
-
-        return view('news', ['name' => $name]);
-    }
-
     public function logout(){
         Auth::logout();
         return redirect('login');

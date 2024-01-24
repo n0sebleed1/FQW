@@ -33,6 +33,13 @@ class RegisterController extends Controller
         Auth::login($user);
 
         $user = Auth::user();
+        $id = $user->id;
+
+        $UserInfo = UserInfo::create([
+            'user_id' => $id,
+        ]);
+
+        $user = Auth::user();
 
         return redirect('news');
     }

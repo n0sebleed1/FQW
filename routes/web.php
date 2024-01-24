@@ -4,11 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
-
-public function get_stats() {
-    $user = Auth::user();
-    $name = $user->name;
-}
+use App\Http\Controllers\Auth\NewsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,13 +15,18 @@ Route::get('/login', function () {
 })->middleware('guest')->name('login');
 
 Route::get('/news', function () {
-    get_stats();
+    $user = Auth::user();
+    $name = $user->name;
+    
     return view('news', ['name' => $name]);
 })->middleware('auth')->name('news');
 
 Route::get('/create', function () {
-    return view('create');
-})->name('create');
+    $user = Auth::user();
+    $name = $user->name;
+
+    return view('create',  ['name' => $name]);
+})->middleware('auth')->name('create');
 
 Route::get('/registration', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('/registration', [RegisterController::class, 'store']);
