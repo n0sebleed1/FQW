@@ -20,7 +20,7 @@
                     <li class="post__tag">Программирование</li>
                 </ul>
             </div>
-            <div class="post__right-content">
+            <div class="post__right-content">   
                 <div class="flex">
                     <p class="post__like-count">539</p>
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">

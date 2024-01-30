@@ -5,12 +5,18 @@
 @endsection
 
 @section('content')
-    <form class="article">
+    <ul class="create-error">
+        @foreach ($errors->all() as $message)
+            <li class="create-error__message">{{ $message }}</li>
+        @endforeach
+    </ul>
+    <form class="article" action="{{ route('create') }}" method="post">
+        @csrf
         <h1 class="article__title">Новая статья</h1>
-        <input class="article__input" type="text" placeholder="Название статьи...">
-        <textarea class="article__input article__textarea" type="text" placeholder="Текст статьи..."></textarea>
-        <textarea class="article__input article__textarea hiden" id="js__attach-code-input" type="text" placeholder="Введите код..."></textarea>
-        <input class="article__input hiden" id="js__attach-image-input" type="file" accept="image/*">
+        <input name="name" class="article__input" type="text" placeholder="Название статьи...">
+        <textarea name="text" class="article__input article__textarea" type="text" placeholder="Текст статьи..."></textarea>
+        <textarea name="code" class="article__input article__textarea hiden" id="js__attach-code-input" type="text" placeholder="Введите код..."></textarea>
+        <input name="image" class="article__input hiden" id="js__attach-image-input" type="file" accept="image/*">
         <button type="button" class="article__attach" id="js__attach-button">
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="30.000000px" height="30.000000px" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill="#909090" stroke="none">

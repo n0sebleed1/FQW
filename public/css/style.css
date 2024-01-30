@@ -391,6 +391,40 @@ header {
     display: none;
 }
 
+.alarm {
+    display: block;
+    background-color: #282828;
+    border: 1px solid #808080;
+    padding: 50px 125px;
+    width: 500px;
+    margin: 30vh auto;
+}
+
+.alarm-text {
+    text-align: center;
+    max-width: 550px;
+    font-size: 24px;
+}
+
+.alarm-link {
+    display: block;
+    text-align: center;
+    margin: 20px auto 0;
+    max-width: 68px;
+    font-size: 16px;
+    color: #000000;
+    padding: 5px 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    transition: 0.3s;
+}
+
+.alarm-link:hover {
+    background-color: #323232;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
 @media (max-width: 1024px){
 
