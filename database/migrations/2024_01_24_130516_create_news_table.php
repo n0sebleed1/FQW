@@ -21,6 +21,7 @@ class CreateNewsTable extends Migration
             $table->longText('text');
             $table->longText('code')->nullable();
             $table->binary('image')->nullable();
+            $table->('name');
             $table->timestamps();
         });
     }

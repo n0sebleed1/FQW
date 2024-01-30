@@ -37,4 +37,12 @@ class NewsController extends Controller
 
         return view('alarm', ['text' => 'Статья успешно создана!']);
     }
+
+    public function allData(){
+        $user = Auth::user();
+        $name = $user->name;
+
+        $news = new News;
+        return view('news', ['data' => $news -> orderBy('id', 'desc') -> get()], ['name' => $name]);
+    }
 }

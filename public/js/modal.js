@@ -6,6 +6,9 @@ const attachCode = document.getElementById('js__attach-code');
 const attachImageInput = document.getElementById('js__attach-image-input');
 const attachCodeInput = document.getElementById('js__attach-code-input');
 
+let codeIsOpen = 0;
+let imageIsOpen = 0;
+
 if (attachButton && attachWindow){
     console.log('Model window founded!')
 
@@ -16,11 +19,19 @@ if (attachButton && attachWindow){
     attachImage.addEventListener('click', function(){
         attachWindow.classList.add('hiden');
         attachImageInput.classList.remove('hiden');
+        imageIsOpen = 1;
+        if (codeIsOpen == 1 && imageIsOpen == 1) {
+            attachButton.classList.add('hiden');
+        }
     });
 
     attachCode.addEventListener('click', function(){
         attachWindow.classList.add('hiden');
         attachCodeInput.classList.remove('hiden');
+        codeIsOpen = 1;
+        if (codeIsOpen == 1 && imageIsOpen == 1) {
+            attachButton.classList.add('hiden');
+        }
     });
 }
 

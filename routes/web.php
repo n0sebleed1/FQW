@@ -14,12 +14,7 @@ Route::get('/login', function () {
     return view('authorization');
 })->middleware('guest')->name('login');
 
-Route::get('/news', function () {
-    $user = Auth::user();
-    $name = $user->name;
-    
-    return view('news', ['name' => $name]);
-})->middleware('auth')->name('news');
+Route::get('/news', [NewsController::class, 'allData'])->middleware('auth')->name('news');
 
 Route::get('/registration', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('/registration', [RegisterController::class, 'store']);
