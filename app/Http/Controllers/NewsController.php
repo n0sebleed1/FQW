@@ -45,4 +45,12 @@ class NewsController extends Controller
         $news = new News;
         return view('news', ['data' => $news -> orderBy('id', 'desc') -> get()], ['name' => $name]);
     }
+
+    public function show($id){
+        $user = Auth::user();
+        $name = $user->name;
+        
+        $news = News::findOrFail($id);
+        return view('article', compact('news'), ['name' => $name]);
+    }
 }

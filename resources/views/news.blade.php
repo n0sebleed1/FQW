@@ -12,6 +12,7 @@
         </div>
         <input class="post__search" placeholder="Поиск...">
         @foreach($data as $el)
+        <a href="news/{{ $el->id }}">
             <div class="post">
                 <div class="post__left-content">
                     <h2 class="post__title">{{ $el->name }}</h2>
@@ -40,6 +41,7 @@
                     </div>
                 </div>
             </div>
+        </a>
         @endforeach
     </div>
 @endsection

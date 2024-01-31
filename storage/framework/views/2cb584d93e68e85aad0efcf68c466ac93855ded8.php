@@ -10,6 +10,7 @@
         </div>
         <input class="post__search" placeholder="Поиск...">
         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $el): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <a href="news/<?php echo e($el->id); ?>">
             <div class="post">
                 <div class="post__left-content">
                     <h2 class="post__title"><?php echo e($el->name); ?></h2>
@@ -38,6 +39,7 @@
                     </div>
                 </div>
             </div>
+        </a>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 <?php $__env->stopSection(); ?>
