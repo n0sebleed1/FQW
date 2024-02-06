@@ -20,8 +20,7 @@ class CreateNewsTable extends Migration
             $table->string('name');
             $table->longText('text');
             $table->longText('code')->nullable();
-            $table->binary('image')->nullable();
-            $table->('name');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

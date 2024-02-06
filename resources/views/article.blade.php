@@ -10,8 +10,8 @@
         <div class="article-block__profile">
             <img src="{{ asset('img/default_avatar.png') }}" width="50px" height="50px">
             <div class="article-block__data">
-                <p class="article-block__data-name">Айрат Нигматзянов</p>
-                <p class="article-block__data-id">02.02.2004</p>
+                <p class="article-block__data-name">kofeine</p>
+                <p class="article-block__data-id">{{ $news->created_at }}</p>
             </div>
         </div>
         <p class="article-block__text">{{ $news->text }}</p>
@@ -19,7 +19,7 @@
             <p class="article-block__code">{{ $news->code }}</p>
         @endif
         @if($news->image != null)
-            <img class="article-block__image" src="{{ $news->image }}" width="665px">
+            <img src="{{ asset('storage/' . $news->image) }}">
         @endif
     </div>
 @endsection

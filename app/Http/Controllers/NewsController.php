@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
+
 use App\News;
 
 class NewsController extends Controller
@@ -27,14 +31,22 @@ class NewsController extends Controller
             'text' => 'required|string|min:16'
         ]);
 
+        $news = new News;
+        $imagePath = '';
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $news->image_path = $imagePath;
+        }
+
         $news = News::create([
             'text' => $request->text,
             'name' => $request->name,
             'user_id' => $user_id,
-            'image' => $request->image,
+            'image' => $imagePath,
             'code' => $request->code
         ]);
-
+        
         return view('alarm', ['text' => 'Статья успешно создана!']);
     }
 
@@ -46,11 +58,13 @@ class NewsController extends Controller
         return view('news', ['data' => $news -> orderBy('id', 'desc') -> get()], ['name' => $name]);
     }
 
-    public function show($id){
+    public function show($id) {
         $user = Auth::user();
-        $name = $user->name;
-        
+        $name = $user->name;        
+    
         $news = News::findOrFail($id);
-        return view('article', compact('news'), ['name' => $name]);
+        
+        
+        return view('article', compact('news', 'name', 'image'));
     }
 }

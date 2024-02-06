@@ -10,7 +10,7 @@
             <li class="create-error__message">{{ $message }}</li>
         @endforeach
     </ul>
-    <form class="article" action="{{ route('create') }}" method="post">
+    <form class="article" action="{{ route('create') }}" method="post" enctype="multipart/form-data">
         @csrf
         <h1 class="article__title">Новая статья</h1>
         <input name="name" class="article__input" type="text" placeholder="Название статьи...">

@@ -69,6 +69,7 @@ header {
 
 .content__center {
     overflow: auto;
+    word-wrap: break-word;
     height: 93vh;
     width: 800px;
 }
@@ -428,7 +429,8 @@ header {
 
 .article-block {
     margin: 50px 30px;
-    max-width: 665px;
+
+    width: 665px;
 }
 
 .article-block__name {
@@ -454,8 +456,6 @@ header {
 }
 
 .article-block__text {
-    display: block;
-    width: 665px;
     margin: 20px 0 0 0;
     white-space: pre-line;
 }
@@ -468,6 +468,7 @@ header {
     background-color: #1A1A1A;
     border: 1px solid #888888;
     white-space: pre;
+
 }
 
 .article-block__image {
