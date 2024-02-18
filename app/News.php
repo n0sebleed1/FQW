@@ -13,6 +13,7 @@ class News extends Model
         'name',
         'text',
         'code',
+        'likes_count',
         'image'
     ];
 }

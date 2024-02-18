@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
 
 use App\News;
+use App\Likes;
 
 class NewsController extends Controller
 {
@@ -59,12 +60,17 @@ class NewsController extends Controller
     }
 
     public function show($id) {
+        $image = null;
         $user = Auth::user();
-        $name = $user->name;        
+        $name = $user->name;     
     
         $news = News::findOrFail($id);
+
+        $like = Likes::where('user_id', $user->id)
+                ->where('news_id', $id)
+                ->first();
         
         
-        return view('article', compact('news', 'name', 'image'));
+        return view('article', compact('news', 'name', 'image'), ['like' => $like]);
     }
 }

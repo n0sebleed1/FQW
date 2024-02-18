@@ -24,7 +24,7 @@
                 </div>
                 <div class="post__right-content">   
                     <div class="flex">
-                        <p class="post__like-count">539</p>
+                        <p class="post__like-count">{{ $el->likes_count }}</p>
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
                             <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill="#FFFFFF" stroke="none">
                                 <path d="M127 589 c-55 -13 -83 -35 -107 -83 -38 -79 -20 -155 63 -258 39 -50 216 -198 236 -198 42 0 261 215 300 294 85 173 -133 333 -276 203 l-23 -20 -22 20 c-46 42 -107 57 -171 42z"/>

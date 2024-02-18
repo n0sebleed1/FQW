@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/prism.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -107,15 +107,11 @@
                 @yield('content')
             </section>
             <section class="content__right">
-                <div class="ad">
-                    Реклама
-                </div>
-                <div class="ad">
-                    Реклама
-                </div>
+                
             </section>
         </div>
     </main>
     <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/prism.js') }}"></script>
 </body>
 </html>

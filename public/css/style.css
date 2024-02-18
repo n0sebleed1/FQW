@@ -147,7 +147,7 @@ header {
     padding: 11px 15px 11px 15px;
     font-size: 14px;
     margin: 20px 0 0 0;
-    width: 95%;
+    width: 100%;
     background-color: #222222;
     border: 1px solid #909090;
     outline: none;
@@ -267,7 +267,7 @@ header {
 
 .article__input {
     display: block;
-    width: 650px;
+    width: 100%;
     outline: none;
     background-color: transparent;
     border: 1px solid #909090;
@@ -473,6 +473,34 @@ header {
 
 .article-block__image {
     margin: 20px 0 0 0;
+}
+
+.article-block__likes {
+    display: flex;
+    margin: 30px 0 0 0;
+}
+
+.article-block__likes-count {
+    font-size: 20px;
+    margin: 0 0 0 10px;
+}
+
+.article-block__likes-count {
+    transition: 0.3s;
+}
+
+.article-block__likes-count:hover {
+    fill: #FF0000;
+    transition: 0.3s;
+}
+
+.article-block__likes-button {
+    background-color: transparent;
+    border: none;
+}
+
+.article-block__img {
+    width: 800px;
 }
 
 @media (max-width: 1024px){
